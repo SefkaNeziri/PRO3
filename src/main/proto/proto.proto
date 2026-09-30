@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "dk.via.pro3.grpc";
+
+service AnimalService {
+  rpc AddAnimalData(AddAnimalDataRegistrationRequest) returns (AnimalDataResponse);
+  rpc GetRegistrationNumber(GetRegistrationNumberRequest) returns (AnimalDataResponse);
+}
+
+service ProductService {
+  rpc GetRegistrationNumbers(GetRegistrationNumbersRequest) returns (ProductDataResponse);
+}
+
+message Animal {
+  int32 registrationNumber = 1;
+}
+
+message Product {
+  repeated int32 registrationNumbers = 1;
+}
+
+message AddAnimalDataRegistrationRequest {
+  int32 registrationNumber = 1;
+}
+
+message GetRegistrationNumberRequest {
+  int32 registrationNumber = 1;
+}
+
+message GetRegistrationNumbersRequest {
+  repeated int32 registrationNumbers = 1;
+}
+
+message AnimalDataResponse {
+  Animal animal = 1;
+}
+
+message ProductDataResponse {
+  Product product = 1;
+}

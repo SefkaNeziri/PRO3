@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Pro3SemesterAssignmentPart2Application {
+public class Main {
 
     public static void main(String[] args) {
-        SpringApplication.run(Pro3SemesterAssignmentPart2Application.class, args);
+        SpringApplication.run(Main.class, args);
     }
-
 }

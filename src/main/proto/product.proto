@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "dk.via.pro3.grpc";
+
+service ProductService {
+  rpc GetRegistrationNumbers (Empty) returns (RegistrationNumbers);
+}
+
+message Empty {
+}
+
+message RegistrationNumbers {
+  repeated int32 registrationNumbers = 1;
+}

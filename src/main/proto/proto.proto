@@ -4,12 +4,13 @@ option java_multiple_files = true;
 option java_package = "dk.via.pro3.grpc";
 
 service AnimalService {
-  rpc AddAnimalData(AddAnimalDataRegistrationRequest) returns (AnimalDataResponse);
-  rpc GetRegistrationNumber(GetRegistrationNumberRequest) returns (AnimalDataResponse);
+  rpc GetProducts(GetProductsRequest)
+      returns (ProductListResponse);
 }
 
 service ProductService {
-  rpc GetRegistrationNumbers(GetRegistrationNumbersRequest) returns (ProductDataResponse);
+  rpc GetRegistrationNumbers(GetRegistrationNumbersRequest)
+      returns (AnimalListResponse);
 }
 
 message Animal {
@@ -17,25 +18,22 @@ message Animal {
 }
 
 message Product {
-  repeated int32 registrationNumbers = 1;
+  int32 productId = 1;
+  repeated int32 registrationNumbers = 2;
 }
 
-message AddAnimalDataRegistrationRequest {
-  int32 registrationNumber = 1;
-}
-
-message GetRegistrationNumberRequest {
+message GetProductsRequest {
   int32 registrationNumber = 1;
 }
 
 message GetRegistrationNumbersRequest {
-  repeated int32 registrationNumbers = 1;
+  int32 productId = 1;
 }
 
-message AnimalDataResponse {
-  Animal animal = 1;
+message ProductListResponse {
+  repeated Product products = 1;
 }
 
-message ProductDataResponse {
-  Product product = 1;
+message AnimalListResponse {
+  repeated Animal animals = 1;
 }

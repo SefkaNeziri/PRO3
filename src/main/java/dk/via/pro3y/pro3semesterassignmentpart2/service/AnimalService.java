@@ -12,12 +12,11 @@ public class AnimalService {
     private final ProductRepository productRepository;
 
     public AnimalService(ProductRepository productRepository) {
+
         this.productRepository = productRepository;
     }
 
     public List<ProductData> getProducts(int registrationNumber) {
-        return productRepository.findByAnimalRegistrationNumber(
-                registrationNumber
-        );
+        return productRepository.findByAnimalRegistrationNumber(registrationNumber);
     }
 }

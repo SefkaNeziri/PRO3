@@ -13,11 +13,11 @@ public class ProductRepository {
     private final JdbcTemplate jdbcTemplate;
 
     public ProductRepository(JdbcTemplate jdbcTemplate) {
+
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<ProductData> findByAnimalRegistrationNumber(
-            int registrationNumber) {
+    public List<ProductData> findByAnimalRegistrationNumber(int registrationNumber) {
 
         String sql = """
                 SELECT p.product_id
@@ -28,12 +28,7 @@ public class ProductRepository {
                 ORDER BY p.product_id
                 """;
 
-        List<Integer> productIds = jdbcTemplate.query(
-                sql,
-                (rs, rowNum) ->
-                        rs.getInt("product_id"),
-                registrationNumber
-        );
+        List<Integer> productIds = jdbcTemplate.query(sql,(rs, rowNum) -> rs.getInt("product_id"), registrationNumber);
 
         List<ProductData> products = new ArrayList<>();
 
@@ -53,18 +48,8 @@ public class ProductRepository {
                 ORDER BY registration_number
                 """;
 
-        List<Integer> registrationNumbers = jdbcTemplate.query(
-                sql,
-                (rs, rowNum) ->
-                        rs.getInt("registration_number"),
-                productId
-        );
+        List<Integer> registrationNumbers = jdbcTemplate.query(sql, (rs, rowNum) -> rs.getInt("registration_number"), productId);
 
-        return new ProductData(
-                productId,
-                registrationNumbers.stream()
-                        .mapToInt(Integer::intValue)
-                        .toArray()
-        );
+        return new ProductData(productId, registrationNumbers.stream().mapToInt(Integer::intValue).toArray());
     }
 }

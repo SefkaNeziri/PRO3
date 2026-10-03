@@ -26,13 +26,6 @@ public class AnimalRepository {
                 ORDER BY a.registration_number
                 """;
 
-        return jdbcTemplate.query(
-                sql,
-                (rs, rowNum) ->
-                        new AnimalData(
-                                rs.getInt("registration_number")
-                        ),
-                productId
-        );
+        return jdbcTemplate.query(sql, (rs, rowNum) -> new AnimalData(rs.getInt("registration_number")),productId);
     }
 }

@@ -12,8 +12,7 @@ import org.springframework.grpc.server.service.GrpcService;
 import java.util.List;
 
 @GrpcService
-public class ProductGrpcService
-        extends ProductServiceGrpc.ProductServiceImplBase {
+public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBase {
 
     private final ProductService productService;
 
@@ -22,27 +21,16 @@ public class ProductGrpcService
     }
 
     @Override
-    public void getRegistrationNumbers(
-            GetRegistrationNumbersRequest request,
-            StreamObserver<AnimalListResponse> responseObserver) {
+    public void getRegistrationNumbers(GetRegistrationNumbersRequest request, StreamObserver<AnimalListResponse> responseObserver) {
 
         int productId = request.getProductId();
 
-        List<AnimalData> animals =
-                productService.getAnimals(productId);
+        List<AnimalData> animals = productService.getAnimals(productId);
 
-        AnimalListResponse.Builder response =
-                AnimalListResponse.newBuilder();
+        AnimalListResponse.Builder response = AnimalListResponse.newBuilder();
 
         for (AnimalData animal : animals) {
-
-            response.addAnimals(
-                    Animal.newBuilder()
-                            .setRegistrationNumber(
-                                    animal.getRegistrationNumber()
-                            )
-                            .build()
-            );
+            response.addAnimals(Animal.newBuilder().setRegistrationNumber(animal.getRegistrationNumber()).build());
         }
 
         responseObserver.onNext(response.build());

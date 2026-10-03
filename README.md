@@ -1,5 +1,5 @@
 To test with BloomRPC:
-Open the .pronto file, and in
+Open the .proto file, and in
 AnimalService -> GetProducts
 
 {

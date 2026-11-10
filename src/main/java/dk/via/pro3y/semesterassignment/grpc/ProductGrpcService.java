@@ -1,11 +1,8 @@
-package dk.via.pro3y.pro3semesterassignmentpart2.grpc;
+package dk.via.pro3y.semesterassignment.grpc;
 
-import dk.via.pro3.grpc.Animal;
-import dk.via.pro3.grpc.AnimalListResponse;
-import dk.via.pro3.grpc.GetRegistrationNumbersRequest;
-import dk.via.pro3.grpc.ProductServiceGrpc;
-import dk.via.pro3y.pro3semesterassignmentpart2.model.AnimalData;
-import dk.via.pro3y.pro3semesterassignmentpart2.service.ProductService;
+import dk.via.pro3y.semesterassignment.model.AnimalData;
+import dk.via.pro3y.semesterassignment.service.ProductService;
+
 import io.grpc.stub.StreamObserver;
 import org.springframework.grpc.server.service.GrpcService;
 

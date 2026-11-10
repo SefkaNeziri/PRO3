@@ -1,7 +1,7 @@
-package dk.via.pro3y.pro3semesterassignmentpart2.service;
+package dk.via.pro3y.semesterassignment.service;
 
-import dk.via.pro3y.pro3semesterassignmentpart2.model.AnimalData;
-import dk.via.pro3y.pro3semesterassignmentpart2.repository.AnimalRepository;
+import dk.via.pro3y.semesterassignment.model.AnimalData;
+import dk.via.pro3y.semesterassignment.repository.AnimalRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

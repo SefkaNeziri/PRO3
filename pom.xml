@@ -13,11 +13,11 @@
     </parent>
 
     <groupId>dk.via.pro3y</groupId>
-    <artifactId>Pro3SemesterAssignmentPart2</artifactId>
+    <artifactId>SemesterAssignment</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>Pro3SemesterAssignmentPart2</name>
-    <description>Pro3SemesterAssignmentPart2</description>
+    <name>SemesterAssignment</name>
+    <description>SemesterAssignment</description>
 
     <properties>
         <java.version>25</java.version>

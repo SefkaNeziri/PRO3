@@ -1,4 +1,4 @@
-package dk.via.pro3y.pro3semesterassignmentpart2;
+package dk.via.pro3y.semesterassignment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package dk.via.pro3y.pro3semesterassignmentpart2.model;
+package dk.via.pro3y.semesterassignment.model;
 
 public class ProductData {
 

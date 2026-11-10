@@ -1,6 +1,6 @@
-package dk.via.pro3y.pro3semesterassignmentpart2.repository;
+package dk.via.pro3y.semesterassignment.repository;
 
-import dk.via.pro3y.pro3semesterassignmentpart2.model.ProductData;
+import dk.via.pro3y.semesterassignment.model.ProductData;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
